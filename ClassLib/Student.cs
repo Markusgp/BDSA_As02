@@ -16,21 +16,17 @@ namespace ClassLib
                 DateTime currentDate = DateTime.Now();
                 if(EndDate < GraduationDate)
                 {
-                    Status = Status.DROPOUT
-                    //droput
+                    //dropout
                 } 
                 else if(EndDate == GraduationDate)
                 {
-                    Status = Status.Graduated
                     //Graduated?
                 } 
                 else if(StartDate == currentDate)
                 {
-                    Status = Status.NEW
                     //new
                 } else
                 {
-                    Status = Status.ACTIVE
                     //active
                 }
                 
@@ -52,7 +48,7 @@ namespace ClassLib
 
         public override string ToString() => $"ID:{ID}, Name:{GivenName}, SurName:{SurName}, StartDate:{StartDate}, EndDate:{EndDate}, GraduationDate:{GraduationDate}";
     }
-
+    
 
     public record ImmutableStudent {
         int ID{get; init;}
@@ -65,21 +61,17 @@ namespace ClassLib
                 DateTime currentDate = DateTime.Now();
                 if(EndDate < GraduationDate)
                 {
-                    Status = Status.DROPOUT
-                    //droput
+                    //dropout
                 } 
                 else if(EndDate == GraduationDate)
                 {
-                    Status = Status.Graduated
                     //Graduated?
                 } 
                 else if(StartDate == currentDate)
                 {
-                    Status = Status.NEW
                     //new
                 } else
                 {
-                    Status = Status.ACTIVE
                     //active
                 }
                 
