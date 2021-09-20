@@ -9,11 +9,7 @@ namespace ClassLib.Tests
         [Fact]
         public void ToString_OutPut_Student()
         {
-            Student student = new Student();
-            student.id = 10;
-            string output = student.ToString();
-            string expected = "10";
-            Assert.Equal(expected, output);
+        
         }
     }
 }

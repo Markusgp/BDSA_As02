@@ -5,35 +5,13 @@ namespace ClassLib
 {
     public class Student
     {
-        int ID{get; set;}
-        string GivenName{get; set;}
-        string SurName{get; set;}
-        Status Status
-        {
-            get
-            {
-                DateTime currentDate = DateTime.Now();
-                if(EndDate < GraduationDate)
-                {
-                    //droput
-                } 
-                else if(EndDate == GraduationDate)
-                {
-                    //Graduated?
-                } 
-                else if(StartDate == currentDate)
-                {
-                    //new
-                } else
-                {
-                    //active
-                }
-                
-            }
-        }
-        DateTime StartDate{get; set;}
-        DateTime EndDate{get; set;}
-        DateTime GraduationDate{get; set;}
+        public int ID{get; set;}
+        public string GivenName{get; set;}
+        public string SurName{get; set;}
+        public Status Status{get; init;}
+        public DateTime StartDate{get; set;}
+        public DateTime EndDate{get; set;}
+        public DateTime GraduationDate{get; set;}
         public Student(int ID, string GivenName, string SurName, 
                 DateTime StartDate, DateTime EndDate, DateTime GraduationDate)
         {
@@ -43,14 +21,30 @@ namespace ClassLib
             this.StartDate = StartDate;
             this.EndDate = EndDate;
             this.GraduationDate = GraduationDate;
+    
+            DateTime currentDate = DateTime.Now;
+            if(EndDate < GraduationDate)
+            {
+                Status = Status.DROPOUT;
+            } 
+            else if(EndDate == GraduationDate)
+            {
+                Status = Status.GRADUATED;
+            } 
+            else if(StartDate == currentDate)
+            {
+                Status = Status.NEW;
+            } else
+            {
+                Status = Status.ACTIVE;
+            }       
         }
-
-        public override string ToString()
-        {
-            string toString = "ID: " + Student.id + " " + Student.GivenName + " " + 
-            Student.SurName + " " + "insert status" + " " + Student.StartDate + " " + Student.EndDate 
-            + " " + Student.GraduationDate;
-            return toString;
-        }
+        public override string ToString() => $"ID:{ID}, Name:{GivenName}, SurName:{SurName}, StartDate:{StartDate}, EndDate:{EndDate}, GraduationDate:{GraduationDate}";
     }
+    public enum Status{
+    NEW,
+    ACTIVE,
+    DROPOUT,
+    GRADUATED
+}
 }
