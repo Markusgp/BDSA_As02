@@ -16,21 +16,21 @@ namespace ClassLib
                 DateTime currentDate = DateTime.Now();
                 if(EndDate < GraduationDate)
                 {
-                    Status = Status.DROPOUT
+                    Status = Status.DROPOUT;
                     //droput
                 } 
                 else if(EndDate == GraduationDate)
                 {
-                    Status = Status.Graduated
+                    Status = Status.Graduated;
                     //Graduated?
                 } 
                 else if(StartDate == currentDate)
                 {
-                    Status = Status.NEW
+                    Status = Status.NEW;
                     //new
                 } else
                 {
-                    Status = Status.ACTIVE
+                    Status = Status.ACTIVE;
                     //active
                 }
                 
@@ -65,21 +65,21 @@ namespace ClassLib
                 DateTime currentDate = DateTime.Now();
                 if(EndDate < GraduationDate)
                 {
-                    Status = Status.DROPOUT
+                    Status = Status.DROPOUT;
                     //droput
                 } 
                 else if(EndDate == GraduationDate)
                 {
-                    Status = Status.Graduated
+                    Status = Status.Graduated;
                     //Graduated?
                 } 
                 else if(StartDate == currentDate)
                 {
-                    Status = Status.NEW
+                    Status = Status.NEW;
                     //new
                 } else
                 {
-                    Status = Status.ACTIVE
+                    Status = Status.ACTIVE;
                     //active
                 }
                 
