@@ -46,7 +46,13 @@ namespace ClassLib
             this.GraduationDate = GraduationDate;
         }
 
-        public override string ToString() => $"ID:{ID}, Name:{GivenName}, SurName:{SurName}, StartDate:{StartDate}, EndDate:{EndDate}, GraduationDate:{GraduationDate}";
+        public override string ToString()
+        {
+            string toString = "ID: " + Student.id + " " + Student.GivenName + " " + 
+            Student.SurName + " " + "insert status" + " " + Student.StartDate + " " + Student.EndDate 
+            + " " + Student.GraduationDate;
+            return toString;
+        }
     }
     
 
