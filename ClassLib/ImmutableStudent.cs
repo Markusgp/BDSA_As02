@@ -1,15 +1,13 @@
-﻿using System;
+using System;
 using enumStatus;
-using System.Collections;
+namespace immutable {
 
-namespace ClassLib
-{
-    
-    public class Student
-    {
-        int ID{get; set;}
-        string GivenName{get; set;}
-        string SurName{get; set;}
+
+
+public record ImmutableStudent {
+        int ID{get; init;}
+        string GivenName{get; init;}
+        string SurName{get; init;}
         Status Status
         {
             set
@@ -18,33 +16,34 @@ namespace ClassLib
                 if(EndDate < GraduationDate)
                 {
                     Status = Status.DROPOUT;
-                    return;
                     //droput
+                    return;
+                    
                 } 
                 else if(EndDate == GraduationDate)
                 {
                     Status = Status.GRADUATED;
-                    return;
                     //Graduated?
+                    return;
                 } 
                 else if(StartDate == currentDate)
                 {
                     Status = Status.NEW;
-                    return;
                     //new
+                    return;
                 } else
                 {
                     Status = Status.ACTIVE;
-                    return;
                     //active
+                    return;
                 }
                 
             }get{return Status;}
         }
-        DateTime StartDate{get; set;}
-        DateTime EndDate{get; set;}
-        DateTime GraduationDate{get; set;}
-        public Student(int ID, string GivenName, string SurName, 
+        DateTime StartDate{get; init;}
+        DateTime EndDate{get; init;}
+        DateTime GraduationDate{get; init;}
+        public ImmutableStudent(int ID, string GivenName, string SurName, 
                 DateTime StartDate, DateTime EndDate, DateTime GraduationDate)
         {
             this.ID = ID;
@@ -55,7 +54,7 @@ namespace ClassLib
             this.GraduationDate = GraduationDate;
         }
 
-        public override string ToString() => $"ID:{ID}, GivenName:{GivenName}, SurName:{SurName}, StartDate:{StartDate.ToString()}, EndDate:{EndDate.ToString()}, GraduationDate:{GraduationDate.ToString()}";
-    }
+            public override string ToString() => $"ID:{ID}, Name:{GivenName}, SurName:{SurName}, StartDate:{StartDate.ToString()}, EndDate:{EndDate.ToString()}, GraduationDate:{GraduationDate.ToString()}";
 
+    }
 }
