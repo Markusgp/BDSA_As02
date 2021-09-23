@@ -20,7 +20,7 @@ namespace ClassLib.Tests
 
             //act
             string actual = student.ToString();
-            string expected = "ID:10, GivenName:navn, SurName:efternavn, StartDate:10.06.2017 00.00.00, EndDate:25.06.2020 00.00.00, GraduationDate:25.06.2020 00.00.00";
+            string expected = "ID:10, GivenName:navn, SurName:efternavn, StartDate:06/10/2017 00/00/00, EndDate:06/25/2020 00/00/00, GraduationDate:06/25/2020 00/00/00";
 
             //"ID:{ID}, Name:{GivenName}, SurName:{SurName}, StartDate:{StartDate}, EndDate:{EndDate}, GraduationDate:{GraduationDate}"
             //Assert
